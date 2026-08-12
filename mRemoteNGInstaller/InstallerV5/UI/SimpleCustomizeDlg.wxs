@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Custom Setup Options: simple checkbox dialog replacing the SelectionTree. -->
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <UI>
+      <Dialog Id="SimpleCustomizeDlg" Width="370" Height="270" Title="Setup Options">
+        <Control Id="Title" Type="Text" X="15" Y="6" Width="210" Height="15" Transparent="yes" NoPrefix="yes" Text="Setup Options" />
+        <Control Id="Description" Type="Text" X="25" Y="23" Width="280" Height="15" Transparent="yes" NoPrefix="yes"
+                 Text="Select the optional components to install." />
+        <Control Id="TopLine" Type="Line" X="0" Y="44" Width="373" Height="0" />
+
+        <Control Id="GroupLabel" Type="Text" X="25" Y="60" Width="300" Height="15" NoPrefix="yes"
+                 Text="Select additional shortcuts to create:" />
+
+        <!-- Desktop shortcut checkbox – bound to Feature F.DesktopShortcut via property -->
+        <Control Id="DesktopCheckBox" Type="CheckBox" X="35" Y="90" Width="300" Height="18"
+                 Property="F.DesktopShortcut" CheckBoxValue="1"
+                 Text="Create a shortcut on my Desktop" />
+
+        <!-- Start menu shortcut checkbox – bound to Feature F.ApplicationStartMenuShortcut -->
+        <Control Id="StartMenuCheckBox" Type="CheckBox" X="35" Y="120" Width="300" Height="18"
+                 Property="F.ApplicationStartMenuShortcut" CheckBoxValue="1"
+                 Text="Create a shortcut in Start Menu" />
+
+        <Control Id="BottomLine" Type="Line" X="0" Y="234" Width="373" Height="0" />
+
+        <Control Id="Back" Type="PushButton" X="192" Y="243" Width="56" Height="17" Text="!(loc.WixUIBack)" />
+        <Control Id="Next" Type="PushButton" X="248" Y="243" Width="56" Height="17" Default="yes" Text="!(loc.WixUINext)" />
+        <Control Id="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Cancel="yes" Text="!(loc.WixUICancel)">
+          <Publish Event="SpawnDialog" Value="CancelDlg" />
+        </Control>
+      </Dialog>
+    </UI>
+  </Fragment>
+</Wix>

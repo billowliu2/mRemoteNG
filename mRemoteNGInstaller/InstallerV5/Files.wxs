@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <DirectoryRef Id="INSTALLDIR">
+      <Directory Id="Dir.Assemblies" Name="Assemblies" />
+      <Directory Id="Dir.Icons" Name="Icons" />
+      <Directory Id="Dir.Schemas" Name="Schemas" />
+      <Directory Id="Dir.Themes" Name="Themes" />
+      <Directory Id="Dir.cs_CZ" Name="cs-CZ" />
+      <Directory Id="Dir.de" Name="de" />
+      <Directory Id="Dir.el" Name="el" />
+      <Directory Id="Dir.es" Name="es" />
+      <Directory Id="Dir.es_AR" Name="es-AR" />
+      <Directory Id="Dir.fi_FI" Name="fi-FI" />
+      <Directory Id="Dir.fr" Name="fr" />
+      <Directory Id="Dir.hu" Name="hu" />
+      <Directory Id="Dir.it" Name="it" />
+      <Directory Id="Dir.ja_JP" Name="ja-JP" />
+      <Directory Id="Dir.ko_KR" Name="ko-KR" />
+      <Directory Id="Dir.lt" Name="lt" />
+      <Directory Id="Dir.nb_NO" Name="nb-NO" />
+      <Directory Id="Dir.nl" Name="nl" />
+      <Directory Id="Dir.pl" Name="pl" />
+      <Directory Id="Dir.pt" Name="pt" />
+      <Directory Id="Dir.pt_BR" Name="pt-BR" />
+      <Directory Id="Dir.ru" Name="ru" />
+      <Directory Id="Dir.runtimes" Name="runtimes">
+        <Directory Id="Dir.runtimes.browser_wasm" Name="browser-wasm">
+          <Directory Id="Dir.runtimes.browser_wasm.nativeassets" Name="nativeassets">
+            <Directory Id="Dir.runtimes.browser_wasm.nativeassets.net9.0" Name="net9.0" />
+          </Directory>
+        </Directory>
+        <Directory Id="Dir.runtimes.linux_arm" Name="linux-arm">
+          <Directory Id="Dir.runtimes.linux_arm.native" Name="native" />
+        </Directory>
+        <Directory Id="Dir.runtimes.linux_arm64" Name="linux-arm64">
+          <Directory Id="Dir.runtimes.linux_arm64.native" Name="native" />
+        </Directory>
+        <Directory Id="Dir.runtimes.linux_armel" Name="linux-armel">
+          <Directory Id="Dir.runtimes.linux_armel.native" Name="native" />
+        </Directory>
+        <Directory Id="Dir.runtimes.linux_mips64" Name="linux-mips64">
+          <Directory Id="Dir.runtimes.linux_mips64.native" Name="native" />
+        </Directory>
+        <Directory Id="Dir.runtimes.linux_musl_arm" Name="linux-musl-arm">
+          <Directory Id="Dir.runtimes.linux_musl_arm.native" Name="native" />
+        </Directory>
+        <Directory Id="Dir.runtimes.linux_musl_arm64" Name="linux-musl-arm64">
+          <Directory Id="Dir.runtimes.linux_musl_arm64.native" Name="native" />
+        </Directory>
+        <Directory Id="Dir.runtimes.linux_musl_riscv64" Name="linux-musl-riscv64">
+          <Directory Id="Dir.runtimes.linux_musl_riscv64.native" Name="native" />
+        </Directory>
+        <Directory Id="Dir.runtimes.linux_musl_s390x" Name="linux-musl-s390x">
+          <Directory Id="Dir.runtimes.linux_musl_s390x.native" Name="native" />
+        </Directory>
+        <Directory Id="Dir.runtimes.linux_musl_x64" Name="linux-musl-x64">
+          <Directory Id="Dir.runtimes.linux_musl_x64.native" Name="native" />
+        </Directory>
+        <Directory Id="Dir.runtimes.linux_ppc64le" Name="linux-ppc64le">
+          <Directory Id="Dir.runtimes.linux_ppc64le.native" Name="native" />
+        </Directory>
+        <Directory Id="Dir.runtimes.linux_riscv64" Name="linux-riscv64">
+          <Directory Id="Dir.runtimes.linux_riscv64.native" Name="native" />
+        </Directory>
+        <Directory Id="Dir.runtimes.linux_s390x" Name="linux-s390x">
+          <Directory Id="Dir.runtimes.linux_s390x.native" Name="native" />
+        </Directory>
+        <Directory Id="Dir.runtimes.linux_x64" Name="linux-x64">
+          <Directory Id="Dir.runtimes.linux_x64.native" Name="native" />
+        </Directory>
+        <Directory Id="Dir.runtimes.linux_x86" Name="linux-x86">
+          <Directory Id="Dir.runtimes.linux_x86.native" Name="native" />
+        </Directory>
+        <Directory Id="Dir.runtimes.maccatalyst_arm64" Name="maccatalyst-arm64">
+          <Directory Id="Dir.runtimes.maccatalyst_arm64.native" Name="native" />
+        </Directory>
+        <Directory Id="Dir.runtimes.maccatalyst_x64" Name="maccatalyst-x64">
+          <Directory Id="Dir.runtimes.maccatalyst_x64.native" Name="native" />
+        </Directory>
+        <Directory Id="Dir.runtimes.osx_arm64" Name="osx-arm64">
+          <Directory Id="Dir.runtimes.osx_arm64.native" Name="native" />
+        </Directory>
+        <Directory Id="Dir.runtimes.osx_x64" Name="osx-x64">
+          <Directory Id="Dir.runtimes.osx_x64.native" Name="native" />
+        </Directory>
+        <Directory Id="Dir.runtimes.win_arm" Name="win-arm">
+          <Directory Id="Dir.runtimes.win_arm.native" Name="native" />
+        </Directory>
+        <Directory Id="Dir.runtimes.win_arm64" Name="win-arm64">
+          <Directory Id="Dir.runtimes.win_arm64.native" Name="native" />
+        </Directory>
+        <Directory Id="Dir.runtimes.win_x64" Name="win-x64">
+          <Directory Id="Dir.runtimes.win_x64.native" Name="native" />
+        </Directory>
+        <Directory Id="Dir.runtimes.win_x86" Name="win-x86">
+          <Directory Id="Dir.runtimes.win_x86.native" Name="native" />
+        </Directory>
+      </Directory>
+      <Directory Id="Dir.sv_SE" Name="sv-SE" />
+      <Directory Id="Dir.ta" Name="ta" />
+      <Directory Id="Dir.tr_TR" Name="tr-TR" />
+      <Directory Id="Dir.uk" Name="uk" />
+      <Directory Id="Dir.zh_CN" Name="zh-CN" />
+      <Directory Id="Dir.zh_TW" Name="zh-TW" />
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <ComponentGroup Id="CG.AppFiles" Directory="INSTALLDIR">
+      <Component Id="C.G9E07FD90B82B5B6F8CAA215BBB568223" Directory="Dir.Assemblies" Guid="9E07FD90B82B5B6F8CAA215BBB568223">
+        <File Id="F.Assemblies.AWSSDK.Core.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/AWSSDK.Core.dll" />
+      </Component>
+      <Component Id="C.GC4AECA8D1A7E5FBEBF56C115A72E6690" Directory="Dir.Assemblies" Guid="C4AECA8D1A7E5FBEBF56C115A72E6690">
+        <File Id="F.Assemblies.AWSSDK.EC2.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/AWSSDK.EC2.dll" />
+      </Component>
+      <Component Id="C.G999413D4AA3E5ED2983A17779DA58684" Directory="Dir.Assemblies" Guid="999413D4AA3E5ED2983A17779DA58684">
+        <File Id="F.Assemblies.BouncyCastle.Cryptography.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/BouncyCastle.Cryptography.dll" />
+      </Component>
+      <Component Id="C.G54B04107C1AA52B5A24D7D225A047D59" Directory="Dir.Assemblies" Guid="54B04107C1AA52B5A24D7D225A047D59">
+        <File Id="F.Assemblies.ConsoleControl.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/ConsoleControl.dll" />
+      </Component>
+      <Component Id="C.G57141A7F699F55CC952F54DC6F89B1F9" Directory="Dir.Assemblies" Guid="57141A7F699F55CC952F54DC6F89B1F9">
+        <File Id="F.Assemblies.ConsoleControlAPI.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/ConsoleControlAPI.dll" />
+      </Component>
+      <Component Id="C.GBFA884FC770E5D3EA84688986376EB7F" Directory="Dir.Assemblies" Guid="BFA884FC770E5D3EA84688986376EB7F">
+        <File Id="F.Assemblies.Google.Protobuf.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Google.Protobuf.dll" />
+      </Component>
+      <Component Id="C.GBC22977F6C6B51B4BF3592EC3A50BE98" Directory="Dir.Assemblies" Guid="BC22977F6C6B51B4BF3592EC3A50BE98">
+        <File Id="F.Assemblies.K4os.Compression.LZ4.Streams.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/K4os.Compression.LZ4.Streams.dll" />
+      </Component>
+      <Component Id="C.G17D6CF3848C255389337BEE8898C64A6" Directory="Dir.Assemblies" Guid="17D6CF3848C255389337BEE8898C64A6">
+        <File Id="F.Assemblies.K4os.Compression.LZ4.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/K4os.Compression.LZ4.dll" />
+      </Component>
+      <Component Id="C.GC5CA726149E05E54A09D75F5F8E10BBF" Directory="Dir.Assemblies" Guid="C5CA726149E05E54A09D75F5F8E10BBF">
+        <File Id="F.Assemblies.K4os.Hash.xxHash.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/K4os.Hash.xxHash.dll" />
+      </Component>
+      <Component Id="C.G36055B215223516F8C72A1E05E5C5DD5" Directory="Dir.Assemblies" Guid="36055B215223516F8C72A1E05E5C5DD5">
+        <File Id="F.Assemblies.Microsoft.Bcl.Cryptography.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Bcl.Cryptography.dll" />
+      </Component>
+      <Component Id="C.G6EA20B4FB4005494BFC4255710646871" Directory="Dir.Assemblies" Guid="6EA20B4FB4005494BFC4255710646871">
+        <File Id="F.Assemblies.Microsoft.Data.SqlClient.Extensions.Abstractions.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Data.SqlClient.Extensions.Abstractions.dll" />
+      </Component>
+      <Component Id="C.G210F2617505E5C04B14A6600203FA977" Directory="Dir.Assemblies" Guid="210F2617505E5C04B14A6600203FA977">
+        <File Id="F.Assemblies.Microsoft.Data.SqlClient.Internal.Logging.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Data.SqlClient.Internal.Logging.dll" />
+      </Component>
+      <Component Id="C.G2E196F2591BC5B60B02CBEC8C26E6E98" Directory="Dir.Assemblies" Guid="2E196F2591BC5B60B02CBEC8C26E6E98">
+        <File Id="F.Assemblies.Microsoft.Data.SqlClient.SNI.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Data.SqlClient.SNI.dll" />
+      </Component>
+      <Component Id="C.G51754A827FDA5AECAC3616864AB1A1B1" Directory="Dir.Assemblies" Guid="51754A827FDA5AECAC3616864AB1A1B1">
+        <File Id="F.Assemblies.Microsoft.Data.SqlClient.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Data.SqlClient.dll" />
+      </Component>
+      <Component Id="C.G01077A257329508286A0A058CAFBDF00" Directory="Dir.Assemblies" Guid="01077A257329508286A0A058CAFBDF00">
+        <File Id="F.Assemblies.Microsoft.Data.SqlClient.resources.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Data.SqlClient.resources.dll" />
+      </Component>
+      <Component Id="C.G50EC9F4E8F6C5E0480218854A52CDE1E" Directory="Dir.Assemblies" Guid="50EC9F4E8F6C5E0480218854A52CDE1E">
+        <File Id="F.Assemblies.Microsoft.Data.Sqlite.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Data.Sqlite.dll" />
+      </Component>
+      <Component Id="C.G20FD5B65D32F53209875884DFB5D6B7E" Directory="Dir.Assemblies" Guid="20FD5B65D32F53209875884DFB5D6B7E">
+        <File Id="F.Assemblies.Microsoft.Extensions.Caching.Abstractions.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Extensions.Caching.Abstractions.dll" />
+      </Component>
+      <Component Id="C.GB33CC1D259D954009844F2CEA15CEE90" Directory="Dir.Assemblies" Guid="B33CC1D259D954009844F2CEA15CEE90">
+        <File Id="F.Assemblies.Microsoft.Extensions.Caching.Memory.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Extensions.Caching.Memory.dll" />
+      </Component>
+      <Component Id="C.G824029A32D685C498A38A9C54D8922C5" Directory="Dir.Assemblies" Guid="824029A32D685C498A38A9C54D8922C5">
+        <File Id="F.Assemblies.Microsoft.Extensions.Configuration.Abstractions.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Extensions.Configuration.Abstractions.dll" />
+      </Component>
+      <Component Id="C.G17835D8F29D050308083420A993A2382" Directory="Dir.Assemblies" Guid="17835D8F29D050308083420A993A2382">
+        <File Id="F.Assemblies.Microsoft.Extensions.Configuration.FileExtensions.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Extensions.Configuration.FileExtensions.dll" />
+      </Component>
+      <Component Id="C.GDD03B01DB53752B9A8535405AC4223DF" Directory="Dir.Assemblies" Guid="DD03B01DB53752B9A8535405AC4223DF">
+        <File Id="F.Assemblies.Microsoft.Extensions.Configuration.Json.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Extensions.Configuration.Json.dll" />
+      </Component>
+      <Component Id="C.G886A4862D4855535AF6449E32F79DD8E" Directory="Dir.Assemblies" Guid="886A4862D4855535AF6449E32F79DD8E">
+        <File Id="F.Assemblies.Microsoft.Extensions.Configuration.UserSecrets.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Extensions.Configuration.UserSecrets.dll" />
+      </Component>
+      <Component Id="C.G1DC8E40D77585BCABC6CFAECAD4456B8" Directory="Dir.Assemblies" Guid="1DC8E40D77585BCABC6CFAECAD4456B8">
+        <File Id="F.Assemblies.Microsoft.Extensions.Configuration.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Extensions.Configuration.dll" />
+      </Component>
+      <Component Id="C.G1B4E16A23BFC576784A518A71F55CD4D" Directory="Dir.Assemblies" Guid="1B4E16A23BFC576784A518A71F55CD4D">
+        <File Id="F.Assemblies.Microsoft.Extensions.DependencyInjection.Abstractions.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+      </Component>
+      <Component Id="C.GCA26632B69685D30B369F6549521EF4B" Directory="Dir.Assemblies" Guid="CA26632B69685D30B369F6549521EF4B">
+        <File Id="F.Assemblies.Microsoft.Extensions.FileProviders.Abstractions.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Extensions.FileProviders.Abstractions.dll" />
+      </Component>
+      <Component Id="C.G81D787CBDD015FFFA5D82B37F2E37C03" Directory="Dir.Assemblies" Guid="81D787CBDD015FFFA5D82B37F2E37C03">
+        <File Id="F.Assemblies.Microsoft.Extensions.FileProviders.Physical.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Extensions.FileProviders.Physical.dll" />
+      </Component>
+      <Component Id="C.GDDB79355C3685B1EADEC44607F22CB06" Directory="Dir.Assemblies" Guid="DDB79355C3685B1EADEC44607F22CB06">
+        <File Id="F.Assemblies.Microsoft.Extensions.FileSystemGlobbing.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Extensions.FileSystemGlobbing.dll" />
+      </Component>
+      <Component Id="C.G3B82E0BE6BBE5FDA87CDD2B7C1B92310" Directory="Dir.Assemblies" Guid="3B82E0BE6BBE5FDA87CDD2B7C1B92310">
+        <File Id="F.Assemblies.Microsoft.Extensions.Logging.Abstractions.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Extensions.Logging.Abstractions.dll" />
+      </Component>
+      <Component Id="C.G1BC4794AB4F25600BE9A913DA7AB450A" Directory="Dir.Assemblies" Guid="1BC4794AB4F25600BE9A913DA7AB450A">
+        <File Id="F.Assemblies.Microsoft.Extensions.Options.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Extensions.Options.dll" />
+      </Component>
+      <Component Id="C.G0132F45E49E15AA9A2850DABB711CDF3" Directory="Dir.Assemblies" Guid="0132F45E49E15AA9A2850DABB711CDF3">
+        <File Id="F.Assemblies.Microsoft.Extensions.Primitives.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Extensions.Primitives.dll" />
+      </Component>
+      <Component Id="C.G0DE96F917F495457B593851F6A43D210" Directory="Dir.Assemblies" Guid="0DE96F917F495457B593851F6A43D210">
+        <File Id="F.Assemblies.Microsoft.IdentityModel.Abstractions.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.IdentityModel.Abstractions.dll" />
+      </Component>
+      <Component Id="C.G8B7035CBBC2556EA99CDEBFCCD73B794" Directory="Dir.Assemblies" Guid="8B7035CBBC2556EA99CDEBFCCD73B794">
+        <File Id="F.Assemblies.Microsoft.IdentityModel.JsonWebTokens.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.IdentityModel.JsonWebTokens.dll" />
+      </Component>
+      <Component Id="C.G891A0C52F62C56DF88A0235F719714E5" Directory="Dir.Assemblies" Guid="891A0C52F62C56DF88A0235F719714E5">
+        <File Id="F.Assemblies.Microsoft.IdentityModel.Logging.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.IdentityModel.Logging.dll" />
+      </Component>
+      <Component Id="C.G4EA2DF5E300B583E9CCE849E831D966B" Directory="Dir.Assemblies" Guid="4EA2DF5E300B583E9CCE849E831D966B">
+        <File Id="F.Assemblies.Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" />
+      </Component>
+      <Component Id="C.GFC1BF2DF15285A3C8366F172DDFBEF76" Directory="Dir.Assemblies" Guid="FC1BF2DF15285A3C8366F172DDFBEF76">
+        <File Id="F.Assemblies.Microsoft.IdentityModel.Protocols.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.IdentityModel.Protocols.dll" />
+      </Component>
+      <Component Id="C.G2153C1406D2A58AE813C778A39A186FD" Directory="Dir.Assemblies" Guid="2153C1406D2A58AE813C778A39A186FD">
+        <File Id="F.Assemblies.Microsoft.IdentityModel.Tokens.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.IdentityModel.Tokens.dll" />
+      </Component>
+      <Component Id="C.G1D79273B3FCC51DBA4FB94FFD7C8CAF7" Directory="Dir.Assemblies" Guid="1D79273B3FCC51DBA4FB94FFD7C8CAF7">
+        <File Id="F.Assemblies.Microsoft.SqlServer.Server.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.SqlServer.Server.dll" />
+      </Component>
+      <Component Id="C.G074CA90B60565371B4019C2A3A27A271" Directory="Dir.Assemblies" Guid="074CA90B60565371B4019C2A3A27A271">
+        <File Id="F.Assemblies.Microsoft.Windows.SDK.NET.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Windows.SDK.NET.dll" />
+      </Component>
+      <Component Id="C.GA53ED2ECA06A5F0EA45F619880E102DD" Directory="Dir.Assemblies" Guid="A53ED2ECA06A5F0EA45F619880E102DD">
+        <File Id="F.Assemblies.Microsoft.WindowsAPICodePack.Shell.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.WindowsAPICodePack.Shell.dll" />
+      </Component>
+      <Component Id="C.G409BD1BFAB625780AEFB70B87C3E92DE" Directory="Dir.Assemblies" Guid="409BD1BFAB625780AEFB70B87C3E92DE">
+        <File Id="F.Assemblies.Microsoft.WindowsAPICodePack.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.WindowsAPICodePack.dll" />
+      </Component>
+      <Component Id="C.G0C8AE860617551BFACAE6E5D6C93F3AB" Directory="Dir.Assemblies" Guid="0C8AE860617551BFACAE6E5D6C93F3AB">
+        <File Id="F.Assemblies.Microsoft.Xaml.Behaviors.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Microsoft.Xaml.Behaviors.dll" />
+      </Component>
+      <Component Id="C.GBFBC2EB56FFD55329AF09D879580169A" Directory="Dir.Assemblies" Guid="BFBC2EB56FFD55329AF09D879580169A">
+        <File Id="F.Assemblies.MySql.Data.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/MySql.Data.dll" />
+      </Component>
+      <Component Id="C.G7C92CF6478255516AD8E117A6B94CD3B" Directory="Dir.Assemblies" Guid="7C92CF6478255516AD8E117A6B94CD3B">
+        <File Id="F.Assemblies.Newtonsoft.Json.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Newtonsoft.Json.dll" />
+      </Component>
+      <Component Id="C.GC99ED2418DE95DFAAB61FD429CEDC050" Directory="Dir.Assemblies" Guid="C99ED2418DE95DFAAB61FD429CEDC050">
+        <File Id="F.Assemblies.Renci.SshNet.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/Renci.SshNet.dll" />
+      </Component>
+      <Component Id="C.G5F67DECCF6BA54B39D1097E72792802C" Directory="Dir.Assemblies" Guid="5F67DECCF6BA54B39D1097E72792802C">
+        <File Id="F.Assemblies.SQLitePCLRaw.batteries_v2.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/SQLitePCLRaw.batteries_v2.dll" />
+      </Component>
+      <Component Id="C.G58F43E768696576A9471084B6FC56C3A" Directory="Dir.Assemblies" Guid="58F43E768696576A9471084B6FC56C3A">
+        <File Id="F.Assemblies.SQLitePCLRaw.core.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/SQLitePCLRaw.core.dll" />
+      </Component>
+      <Component Id="C.G105675AA247B5A2CB0BF5BA97E93F521" Directory="Dir.Assemblies" Guid="105675AA247B5A2CB0BF5BA97E93F521">
+        <File Id="F.Assemblies.SQLitePCLRaw.provider.e_sqlite3.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/SQLitePCLRaw.provider.e_sqlite3.dll" />
+      </Component>
+      <Component Id="C.G12FC6C94D63655EDA03F70BB7C90217B" Directory="Dir.Assemblies" Guid="12FC6C94D63655EDA03F70BB7C90217B">
+        <File Id="F.Assemblies.System.Data.Odbc.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/System.Data.Odbc.dll" />
+      </Component>
+      <Component Id="C.G547776B8A1E25C778CD557EAF06FAAA5" Directory="Dir.Assemblies" Guid="547776B8A1E25C778CD557EAF06FAAA5">
+        <File Id="F.Assemblies.System.IdentityModel.Tokens.Jwt.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/System.IdentityModel.Tokens.Jwt.dll" />
+      </Component>
+      <Component Id="C.G8DCBC2DF1E0350AFAA444F9FB83EFBAE" Directory="Dir.Assemblies" Guid="8DCBC2DF1E0350AFAA444F9FB83EFBAE">
+        <File Id="F.Assemblies.System.Management.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/System.Management.dll" />
+      </Component>
+      <Component Id="C.GA942E2EF46F356DD9E80B93A58C77F0E" Directory="Dir.Assemblies" Guid="A942E2EF46F356DD9E80B93A58C77F0E">
+        <File Id="F.Assemblies.VaultSharp.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/VaultSharp.dll" />
+      </Component>
+      <Component Id="C.G92EF6FF108425C169CC4AA990984E335" Directory="Dir.Assemblies" Guid="92EF6FF108425C169CC4AA990984E335">
+        <File Id="F.Assemblies.VncSharpCore.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/VncSharpCore.dll" />
+      </Component>
+      <Component Id="C.GEA70B3617ECB54C18061DF1948F2E239" Directory="Dir.Assemblies" Guid="EA70B3617ECB54C18061DF1948F2E239">
+        <File Id="F.Assemblies.WebView2Loader.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/WebView2Loader.dll" />
+      </Component>
+      <Component Id="C.G21DB0FAFF4B259F8839A716127BFCD3E" Directory="Dir.Assemblies" Guid="21DB0FAFF4B259F8839A716127BFCD3E">
+        <File Id="F.Assemblies.WeifenLuo.WinFormsUI.Docking.ThemeVS2015.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/WeifenLuo.WinFormsUI.Docking.ThemeVS2015.dll" />
+      </Component>
+      <Component Id="C.GB09034474EEC5ACB8C5DFB1D2C1EF045" Directory="Dir.Assemblies" Guid="B09034474EEC5ACB8C5DFB1D2C1EF045">
+        <File Id="F.Assemblies.WeifenLuo.WinFormsUI.Docking.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/WeifenLuo.WinFormsUI.Docking.dll" />
+      </Component>
+      <Component Id="C.GCAB196C4042254878876145D1F3FCFF4" Directory="Dir.Assemblies" Guid="CAB196C4042254878876145D1F3FCFF4">
+        <File Id="F.Assemblies.WinRT.Runtime.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/WinRT.Runtime.dll" />
+      </Component>
+      <Component Id="C.GFAEB1A260A1B588F9A19442F5BDF4814" Directory="Dir.Assemblies" Guid="FAEB1A260A1B588F9A19442F5BDF4814">
+        <File Id="F.Assemblies.ZstdSharp.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/ZstdSharp.dll" />
+      </Component>
+      <Component Id="C.G6994B31837185BB59087547A8C2F7514" Directory="Dir.Assemblies" Guid="6994B31837185BB59087547A8C2F7514">
+        <File Id="F.Assemblies.comerr64.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/comerr64.dll" />
+      </Component>
+      <Component Id="C.G470CC66F5B8356A88428D1B099353CD6" Directory="Dir.Assemblies" Guid="470CC66F5B8356A88428D1B099353CD6">
+        <File Id="F.Assemblies.gssapi64.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/gssapi64.dll" />
+      </Component>
+      <Component Id="C.G86547D8ABAF35AF7AC3F2A671FA9DCED" Directory="Dir.Assemblies" Guid="86547D8ABAF35AF7AC3F2A671FA9DCED">
+        <File Id="F.Assemblies.k5sprt64.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/k5sprt64.dll" />
+      </Component>
+      <Component Id="C.GB4103ED2BEDA5262AFBF6A10283D5620" Directory="Dir.Assemblies" Guid="B4103ED2BEDA5262AFBF6A10283D5620">
+        <File Id="F.Assemblies.krb5_64.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/krb5_64.dll" />
+      </Component>
+      <Component Id="C.GA3CDD6D5E77050E49FEBA30ACDD8950B" Directory="Dir.Assemblies" Guid="A3CDD6D5E77050E49FEBA30ACDD8950B">
+        <File Id="F.Assemblies.krbcc64.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/krbcc64.dll" />
+      </Component>
+      <Component Id="C.G8DABC269A779519C96134AD452AD3FAB" Directory="Dir.Assemblies" Guid="8DABC269A779519C96134AD452AD3FAB">
+        <File Id="F.Assemblies.log4net.dll" KeyPath="yes" Source="$(var.BinDir)\Assemblies/log4net.dll" />
+      </Component>
+      <Component Id="C.G6DE86AE31E005A8CB5F4F4209D681DE8" Directory="INSTALLDIR" Guid="6DE86AE31E005A8CB5F4F4209D681DE8">
+        <File Id="F.AxInterop.MSTSCLib.dll" KeyPath="yes" Source="$(var.BinDir)\AxInterop.MSTSCLib.dll" />
+      </Component>
+      <Component Id="C.GEBD8C3E8F5205FF28F427541D1108139" Directory="INSTALLDIR" Guid="EBD8C3E8F5205FF28F427541D1108139">
+        <File Id="F.ExternalConnectors.dll" KeyPath="yes" Source="$(var.BinDir)\ExternalConnectors.dll" />
+      </Component>
+      <Component Id="C.GA8AA3C54530351A3A8A55F17F9C04B21" Directory="Dir.Icons" Guid="A8AA3C54530351A3A8A55F17F9C04B21">
+        <File Id="F.Icons.Admin.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Admin.ico" />
+      </Component>
+      <Component Id="C.GD220B51BDD1C565E962882A28435491A" Directory="Dir.Icons" Guid="D220B51BDD1C565E962882A28435491A">
+        <File Id="F.Icons.Anti_Virus.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Anti Virus.ico" />
+      </Component>
+      <Component Id="C.G4C9B539A8E9C52669CC5D5E9A3A82D23" Directory="Dir.Icons" Guid="4C9B539A8E9C52669CC5D5E9A3A82D23">
+        <File Id="F.Icons.Apple.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Apple.ico" />
+      </Component>
+      <Component Id="C.G53E65B3554B4509FB05E276E731A2770" Directory="Dir.Icons" Guid="53E65B3554B4509FB05E276E731A2770">
+        <File Id="F.Icons.Backup.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Backup.ico" />
+      </Component>
+      <Component Id="C.G46ADC7EC87E85CE3901A93E399A1EF49" Directory="Dir.Icons" Guid="46ADC7EC87E85CE3901A93E399A1EF49">
+        <File Id="F.Icons.Build_Server.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Build Server.ico" />
+      </Component>
+      <Component Id="C.GF6F999D98CF355FBB73C43ACB2E39A0B" Directory="Dir.Icons" Guid="F6F999D98CF355FBB73C43ACB2E39A0B">
+        <File Id="F.Icons.Console.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Console.ico" />
+      </Component>
+      <Component Id="C.G67FDDB005C125FE9BC3CC5FBE9223D41" Directory="Dir.Icons" Guid="67FDDB005C125FE9BC3CC5FBE9223D41">
+        <File Id="F.Icons.Database.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Database.ico" />
+      </Component>
+      <Component Id="C.G9AD7A978501B51B49F40F2B23296C5A5" Directory="Dir.Icons" Guid="9AD7A978501B51B49F40F2B23296C5A5">
+        <File Id="F.Icons.Domain_Controller.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Domain Controller.ico" />
+      </Component>
+      <Component Id="C.GAF91846D6E4557C39277737473DD4E41" Directory="Dir.Icons" Guid="AF91846D6E4557C39277737473DD4E41">
+        <File Id="F.Icons.ESX.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/ESX.ico" />
+      </Component>
+      <Component Id="C.GD65E5F0F8A3E5B8A85B295F5DAEEA068" Directory="Dir.Icons" Guid="D65E5F0F8A3E5B8A85B295F5DAEEA068">
+        <File Id="F.Icons.Fax.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Fax.ico" />
+      </Component>
+      <Component Id="C.G689DD1F2E0CD5A69892461F32504DB13" Directory="Dir.Icons" Guid="689DD1F2E0CD5A69892461F32504DB13">
+        <File Id="F.Icons.File_Server.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/File Server.ico" />
+      </Component>
+      <Component Id="C.GBADCCFB244F75F3A973A29FE4F62F13F" Directory="Dir.Icons" Guid="BADCCFB244F75F3A973A29FE4F62F13F">
+        <File Id="F.Icons.Finance.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Finance.ico" />
+      </Component>
+      <Component Id="C.G789CA731213E5A6C86F653677874F0A0" Directory="Dir.Icons" Guid="789CA731213E5A6C86F653677874F0A0">
+        <File Id="F.Icons.Firewall.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Firewall.ico" />
+      </Component>
+      <Component Id="C.GA10FF17D6E6258789DF56CFF5871DE53" Directory="Dir.Icons" Guid="A10FF17D6E6258789DF56CFF5871DE53">
+        <File Id="F.Icons.Infrastructure.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Infrastructure.ico" />
+      </Component>
+      <Component Id="C.GEF5651D3D0955BA38CAD49E5045BE3BA" Directory="Dir.Icons" Guid="EF5651D3D0955BA38CAD49E5045BE3BA">
+        <File Id="F.Icons.Linux.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Linux.ico" />
+      </Component>
+      <Component Id="C.GA6468CA277775860A6EFCEE8C249C446" Directory="Dir.Icons" Guid="A6468CA277775860A6EFCEE8C249C446">
+        <File Id="F.Icons.Log.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Log.ico" />
+      </Component>
+      <Component Id="C.G600D8A041D405F8DA1637A9D7AD6065E" Directory="Dir.Icons" Guid="600D8A041D405F8DA1637A9D7AD6065E">
+        <File Id="F.Icons.Mail_Server.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Mail Server.ico" />
+      </Component>
+      <Component Id="C.G40924630B6535451AF098E8C5583B147" Directory="Dir.Icons" Guid="40924630B6535451AF098E8C5583B147">
+        <File Id="F.Icons.PowerShell.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/PowerShell.ico" />
+      </Component>
+      <Component Id="C.G10DAFA5CD21158068396BDD405CC33E6" Directory="Dir.Icons" Guid="10DAFA5CD21158068396BDD405CC33E6">
+        <File Id="F.Icons.Production.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Production.ico" />
+      </Component>
+      <Component Id="C.G8A15E2DD60F05785B323A3A1CBE55242" Directory="Dir.Icons" Guid="8A15E2DD60F05785B323A3A1CBE55242">
+        <File Id="F.Icons.PuTTY.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/PuTTY.ico" />
+      </Component>
+      <Component Id="C.GCBE014D90CE55F3EBD8E035DFDB0F5FA" Directory="Dir.Icons" Guid="CBE014D90CE55F3EBD8E035DFDB0F5FA">
+        <File Id="F.Icons.RaspberryPi.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/RaspberryPi.ico" />
+      </Component>
+      <Component Id="C.G0B059B88A660541EBEDCC50A2233B889" Directory="Dir.Icons" Guid="0B059B88A660541EBEDCC50A2233B889">
+        <File Id="F.Icons.Remote_Desktop.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Remote Desktop.ico" />
+      </Component>
+      <Component Id="C.G998C8E22F793566E8F71787AED48A56A" Directory="Dir.Icons" Guid="998C8E22F793566E8F71787AED48A56A">
+        <File Id="F.Icons.Router.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Router.ico" />
+      </Component>
+      <Component Id="C.G19B64DC20BFF5F44A679560EC6120A82" Directory="Dir.Icons" Guid="19B64DC20BFF5F44A679560EC6120A82">
+        <File Id="F.Icons.SSH.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/SSH.ico" />
+      </Component>
+      <Component Id="C.G5C84C061B8D25C80B5F78F75804A29E6" Directory="Dir.Icons" Guid="5C84C061B8D25C80B5F78F75804A29E6">
+        <File Id="F.Icons.SharePoint.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/SharePoint.ico" />
+      </Component>
+      <Component Id="C.GEDA18ED7E7D05AD3A0F181F2C80B2442" Directory="Dir.Icons" Guid="EDA18ED7E7D05AD3A0F181F2C80B2442">
+        <File Id="F.Icons.Staging.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Staging.ico" />
+      </Component>
+      <Component Id="C.GBEBBFFFFA78E5E0A895FCD07FFDB30DA" Directory="Dir.Icons" Guid="BEBBFFFFA78E5E0A895FCD07FFDB30DA">
+        <File Id="F.Icons.Switch.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Switch.ico" />
+      </Component>
+      <Component Id="C.GB7635D45BE8055D5993FF2C4627A7054" Directory="Dir.Icons" Guid="B7635D45BE8055D5993FF2C4627A7054">
+        <File Id="F.Icons.Tel.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Tel.ico" />
+      </Component>
+      <Component Id="C.G552A2C24322158199B2E9B3CCEBF3643" Directory="Dir.Icons" Guid="552A2C24322158199B2E9B3CCEBF3643">
+        <File Id="F.Icons.Telnet.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Telnet.ico" />
+      </Component>
+      <Component Id="C.G0A59867F38DD580793602559218350AF" Directory="Dir.Icons" Guid="0A59867F38DD580793602559218350AF">
+        <File Id="F.Icons.Terminal_Server.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Terminal Server.ico" />
+      </Component>
+      <Component Id="C.G9839B619E4C25AED83BABE01AF4ACB97" Directory="Dir.Icons" Guid="9839B619E4C25AED83BABE01AF4ACB97">
+        <File Id="F.Icons.Test_Server.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Test Server.ico" />
+      </Component>
+      <Component Id="C.GF189E599DF1858F3AD373DE79149750C" Directory="Dir.Icons" Guid="F189E599DF1858F3AD373DE79149750C">
+        <File Id="F.Icons.Virtual_Machine.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Virtual Machine.ico" />
+      </Component>
+      <Component Id="C.GD4E3224B08AC5FBF9A099950FDAF0F62" Directory="Dir.Icons" Guid="D4E3224B08AC5FBF9A099950FDAF0F62">
+        <File Id="F.Icons.WSL.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/WSL.ico" />
+      </Component>
+      <Component Id="C.GF3F116B43AB7595485210B931671FE73" Directory="Dir.Icons" Guid="F3F116B43AB7595485210B931671FE73">
+        <File Id="F.Icons.Web_Server.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Web Server.ico" />
+      </Component>
+      <Component Id="C.GC9C775A432075EFBA5EF4A8AF4E16662" Directory="Dir.Icons" Guid="C9C775A432075EFBA5EF4A8AF4E16662">
+        <File Id="F.Icons.WiFi.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/WiFi.ico" />
+      </Component>
+      <Component Id="C.GE6F014E4D8FA54E18E26E1F9F1568A91" Directory="Dir.Icons" Guid="E6F014E4D8FA54E18E26E1F9F1568A91">
+        <File Id="F.Icons.Windows.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Windows.ico" />
+      </Component>
+      <Component Id="C.G2FBB11DFCB885AD689667144C9FD8AA0" Directory="Dir.Icons" Guid="2FBB11DFCB885AD689667144C9FD8AA0">
+        <File Id="F.Icons.Workstation.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/Workstation.ico" />
+      </Component>
+      <Component Id="C.GC39325878B195F39AD1D93E38B0A853F" Directory="Dir.Icons" Guid="C39325878B195F39AD1D93E38B0A853F">
+        <File Id="F.Icons.mRemote.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/mRemote.ico" />
+      </Component>
+      <Component Id="C.GEB3A9344E50E5B89A141C0512078208E" Directory="Dir.Icons" Guid="EB3A9344E50E5B89A141C0512078208E">
+        <File Id="F.Icons.mRemoteNG.ico" KeyPath="yes" Source="$(var.BinDir)\Icons/mRemoteNG.ico" />
+      </Component>
+      <Component Id="C.G01802BC4DEE75FB39E94873C48E54404" Directory="INSTALLDIR" Guid="01802BC4DEE75FB39E94873C48E54404">
+        <File Id="F.Interop.MSTSCLib.dll" KeyPath="yes" Source="$(var.BinDir)\Interop.MSTSCLib.dll" />
+      </Component>
+      <Component Id="C.G1FE4966BAF265D3C97F025FE29902709" Directory="INSTALLDIR" Guid="1FE4966BAF265D3C97F025FE29902709">
+        <File Id="F.Microsoft.Web.WebView2.Core.dll" KeyPath="yes" Source="$(var.BinDir)\Microsoft.Web.WebView2.Core.dll" />
+      </Component>
+      <Component Id="C.GEAD64910B71C5689A870CD0A02936037" Directory="INSTALLDIR" Guid="EAD64910B71C5689A870CD0A02936037">
+        <File Id="F.Microsoft.Web.WebView2.WinForms.dll" KeyPath="yes" Source="$(var.BinDir)\Microsoft.Web.WebView2.WinForms.dll" />
+      </Component>
+      <Component Id="C.G09C9EBF399F95B7AB63AB408B12C991C" Directory="INSTALLDIR" Guid="09C9EBF399F95B7AB63AB408B12C991C">
+        <File Id="F.Microsoft.Web.WebView2.Wpf.dll" KeyPath="yes" Source="$(var.BinDir)\Microsoft.Web.WebView2.Wpf.dll" />
+      </Component>
+      <Component Id="C.GB69EE2B8551C5F21B3D19D3BAFF03EFF" Directory="INSTALLDIR" Guid="B69EE2B8551C5F21B3D19D3BAFF03EFF">
+        <File Id="F.ObjectListView.dll" KeyPath="yes" Source="$(var.BinDir)\ObjectListView.dll" />
+      </Component>
+      <Component Id="C.G7E07B4D1064E5DA09126D93AC33C70B8" Directory="Dir.Schemas" Guid="7E07B4D1064E5DA09126D93AC33C70B8">
+        <File Id="F.Schemas.mremoteng_confcons_v2_8.xsd" KeyPath="yes" Source="$(var.BinDir)\Schemas/mremoteng_confcons_v2_8.xsd" />
+      </Component>
+      <Component Id="C.G4C9F628260515658B086F6265F1F805D" Directory="Dir.Schemas" Guid="4C9F628260515658B086F6265F1F805D">
+        <File Id="F.Schemas.mremoteng_credrepo_list_v1_0.xsd" KeyPath="yes" Source="$(var.BinDir)\Schemas/mremoteng_credrepo_list_v1_0.xsd" />
+      </Component>
+      <Component Id="C.G9B6391E133A959EE977F20B981550D6B" Directory="Dir.Schemas" Guid="9B6391E133A959EE977F20B981550D6B">
+        <File Id="F.Schemas.mremoteng_creds_v1_0.xsd" KeyPath="yes" Source="$(var.BinDir)\Schemas/mremoteng_creds_v1_0.xsd" />
+      </Component>
+      <Component Id="C.G21C627B216EF55269033A1B5506A220A" Directory="Dir.Schemas" Guid="21C627B216EF55269033A1B5506A220A">
+        <File Id="F.Schemas.mremoteng_default_settings_v1_0.json" KeyPath="yes" Source="$(var.BinDir)\Schemas/mremoteng_default_settings_v1_0.json" />
+      </Component>
+      <Component Id="C.G122211EB05065AFB8149E3CD2A80E8BA" Directory="Dir.Themes" Guid="122211EB05065AFB8149E3CD2A80E8BA">
+        <File Id="F.Themes.darcula.vstheme" KeyPath="yes" Source="$(var.BinDir)\Themes/darcula.vstheme" />
+      </Component>
+      <Component Id="C.GAAEA89241888575998EABD649A3E5A9E" Directory="Dir.Themes" Guid="AAEA89241888575998EABD649A3E5A9E">
+        <File Id="F.Themes.vs2015blue.vstheme" KeyPath="yes" Source="$(var.BinDir)\Themes/vs2015blue.vstheme" />
+      </Component>
+      <Component Id="C.G8C6D8B9774FD53028AE714F1F1C39956" Directory="Dir.Themes" Guid="8C6D8B9774FD53028AE714F1F1C39956">
+        <File Id="F.Themes.vs2015dark.vstheme" KeyPath="yes" Source="$(var.BinDir)\Themes/vs2015dark.vstheme" />
+      </Component>
+      <Component Id="C.GE65121C200215D1F8F3F144E1653F5D2" Directory="Dir.Themes" Guid="E65121C200215D1F8F3F144E1653F5D2">
+        <File Id="F.Themes.vs2015light.vstheme" KeyPath="yes" Source="$(var.BinDir)\Themes/vs2015light.vstheme" />
+      </Component>
+      <Component Id="C.G0FD30BA4FC2C5782A16B2193866478FE" Directory="INSTALLDIR" Guid="0FD30BA4FC2C5782A16B2193866478FE">
+        <File Id="F.VisualElements_150.png" KeyPath="yes" Source="$(var.BinDir)\VisualElements_150.png" />
+      </Component>
+      <Component Id="C.G328AA9F371A25D629E21CB68802301E3" Directory="INSTALLDIR" Guid="328AA9F371A25D629E21CB68802301E3">
+        <File Id="F.VisualElements_70.png" KeyPath="yes" Source="$(var.BinDir)\VisualElements_70.png" />
+      </Component>
+      <Component Id="C.G58CAF09513305CC78467A29EE9175AC2" Directory="Dir.cs_CZ" Guid="58CAF09513305CC78467A29EE9175AC2">
+        <File Id="F.cs_CZ.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\cs-CZ/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.GFE00709F814E57B6A6AC92FFB98BD7A9" Directory="Dir.de" Guid="FE00709F814E57B6A6AC92FFB98BD7A9">
+        <File Id="F.de.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\de/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.GD65B86B2BBD153E58EAACCCF77D34446" Directory="Dir.el" Guid="D65B86B2BBD153E58EAACCCF77D34446">
+        <File Id="F.el.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\el/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.G2F6E6A1C0FC554F885DEBE061F8C0BC1" Directory="Dir.es_AR" Guid="2F6E6A1C0FC554F885DEBE061F8C0BC1">
+        <File Id="F.es_AR.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\es-AR/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.G5040F2847FED50369A3C95E0D3FA66E2" Directory="Dir.es" Guid="5040F2847FED50369A3C95E0D3FA66E2">
+        <File Id="F.es.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\es/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.G830E29BAE5655334BF97936D115F51F2" Directory="Dir.fi_FI" Guid="830E29BAE5655334BF97936D115F51F2">
+        <File Id="F.fi_FI.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\fi-FI/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.G5D5995BFE7395DB48AEC92DEE022BE89" Directory="Dir.fr" Guid="5D5995BFE7395DB48AEC92DEE022BE89">
+        <File Id="F.fr.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\fr/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.G236BE6E7641B55E096E84B16211898FB" Directory="Dir.hu" Guid="236BE6E7641B55E096E84B16211898FB">
+        <File Id="F.hu.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\hu/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.GD2F19C49C6A05D0B9923B6C06E2ED67C" Directory="Dir.it" Guid="D2F19C49C6A05D0B9923B6C06E2ED67C">
+        <File Id="F.it.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\it/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.G52B5C581896257DB9A312C6461AEB769" Directory="Dir.ja_JP" Guid="52B5C581896257DB9A312C6461AEB769">
+        <File Id="F.ja_JP.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\ja-JP/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.G57E40780EB715B5CAF874D84F4DBA8A5" Directory="Dir.ko_KR" Guid="57E40780EB715B5CAF874D84F4DBA8A5">
+        <File Id="F.ko_KR.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\ko-KR/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.GF075A5ABFBE95DA8B73A429A549F507D" Directory="Dir.lt" Guid="F075A5ABFBE95DA8B73A429A549F507D">
+        <File Id="F.lt.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\lt/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.GC177937B15D05E63940BD14DB98DF019" Directory="INSTALLDIR" Guid="C177937B15D05E63940BD14DB98DF019">
+        <File Id="F.mRemoteNG.deps.json" KeyPath="yes" Source="$(var.BinDir)\mRemoteNG.deps.json" />
+      </Component>
+      <Component Id="C.G16B9968AEADE51C5A0F35AA6388E2058" Directory="INSTALLDIR" Guid="16B9968AEADE51C5A0F35AA6388E2058">
+        <File Id="F.mRemoteNG.dll" KeyPath="yes" Source="$(var.BinDir)\mRemoteNG.dll" />
+      </Component>
+      <Component Id="C.G12CFA99996AD51F8898E8015F024809F" Directory="INSTALLDIR" Guid="12CFA99996AD51F8898E8015F024809F">
+        <File Id="F.mRemoteNG.runtimeconfig.json" KeyPath="yes" Source="$(var.BinDir)\mRemoteNG.runtimeconfig.json" />
+      </Component>
+      <Component Id="C.GC1E6869E817E548DA384866847318C3F" Directory="Dir.nb_NO" Guid="C1E6869E817E548DA384866847318C3F">
+        <File Id="F.nb_NO.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\nb-NO/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.G90D71A724CF65D6DA32CBEE8BA6E5E8B" Directory="Dir.nl" Guid="90D71A724CF65D6DA32CBEE8BA6E5E8B">
+        <File Id="F.nl.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\nl/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.G964F9257087654A48B62A06167E2E750" Directory="Dir.pl" Guid="964F9257087654A48B62A06167E2E750">
+        <File Id="F.pl.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\pl/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.G823B2407EB2D5AFA97B75A61EE0527F0" Directory="Dir.pt_BR" Guid="823B2407EB2D5AFA97B75A61EE0527F0">
+        <File Id="F.pt_BR.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\pt-BR/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.GF8318385A2355086BE22DA1206CBDE2D" Directory="Dir.pt" Guid="F8318385A2355086BE22DA1206CBDE2D">
+        <File Id="F.pt.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\pt/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.G85D1821492785BEAB23760DA1248A122" Directory="Dir.ru" Guid="85D1821492785BEAB23760DA1248A122">
+        <File Id="F.ru.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\ru/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.GE6E28BB9A0CF557EA5D842B391134C52" Directory="Dir.runtimes.browser_wasm.nativeassets.net9.0" Guid="E6E28BB9A0CF557EA5D842B391134C52">
+        <File Id="F.runtimes.browser_wasm.nativeassets.net9.0.e_sqlite3.a" KeyPath="yes" Source="$(var.BinDir)\runtimes/browser-wasm/nativeassets/net9.0/e_sqlite3.a" />
+      </Component>
+      <Component Id="C.G0B36E8A2F57C560580E406F12507355B" Directory="Dir.runtimes.linux_arm.native" Guid="0B36E8A2F57C560580E406F12507355B">
+        <File Id="F.runtimes.linux_arm.native.libe_sqlite3.so" KeyPath="yes" Source="$(var.BinDir)\runtimes/linux-arm/native/libe_sqlite3.so" />
+      </Component>
+      <Component Id="C.G672300A085D254B0A34308C48E68B9DA" Directory="Dir.runtimes.linux_arm64.native" Guid="672300A085D254B0A34308C48E68B9DA">
+        <File Id="F.runtimes.linux_arm64.native.libe_sqlite3.so" KeyPath="yes" Source="$(var.BinDir)\runtimes/linux-arm64/native/libe_sqlite3.so" />
+      </Component>
+      <Component Id="C.G96211C3D98A15583958429A6B791DE49" Directory="Dir.runtimes.linux_armel.native" Guid="96211C3D98A15583958429A6B791DE49">
+        <File Id="F.runtimes.linux_armel.native.libe_sqlite3.so" KeyPath="yes" Source="$(var.BinDir)\runtimes/linux-armel/native/libe_sqlite3.so" />
+      </Component>
+      <Component Id="C.G4AC4D4523FC457AFAB951D806AB54DE7" Directory="Dir.runtimes.linux_mips64.native" Guid="4AC4D4523FC457AFAB951D806AB54DE7">
+        <File Id="F.runtimes.linux_mips64.native.libe_sqlite3.so" KeyPath="yes" Source="$(var.BinDir)\runtimes/linux-mips64/native/libe_sqlite3.so" />
+      </Component>
+      <Component Id="C.GD67BEEA33ADE5150A90B94073632CF44" Directory="Dir.runtimes.linux_musl_arm.native" Guid="D67BEEA33ADE5150A90B94073632CF44">
+        <File Id="F.runtimes.linux_musl_arm.native.libe_sqlite3.so" KeyPath="yes" Source="$(var.BinDir)\runtimes/linux-musl-arm/native/libe_sqlite3.so" />
+      </Component>
+      <Component Id="C.G1C90D4312F6C51E3A90573A9C57FDBD3" Directory="Dir.runtimes.linux_musl_arm64.native" Guid="1C90D4312F6C51E3A90573A9C57FDBD3">
+        <File Id="F.runtimes.linux_musl_arm64.native.libe_sqlite3.so" KeyPath="yes" Source="$(var.BinDir)\runtimes/linux-musl-arm64/native/libe_sqlite3.so" />
+      </Component>
+      <Component Id="C.GB1698B3361D950B0A482CFED387CBB6A" Directory="Dir.runtimes.linux_musl_riscv64.native" Guid="B1698B3361D950B0A482CFED387CBB6A">
+        <File Id="F.runtimes.linux_musl_riscv64.native.libe_sqlite3.so" KeyPath="yes" Source="$(var.BinDir)\runtimes/linux-musl-riscv64/native/libe_sqlite3.so" />
+      </Component>
+      <Component Id="C.GA1664672AB2B57E0ACD3EB3BC4F8C12A" Directory="Dir.runtimes.linux_musl_s390x.native" Guid="A1664672AB2B57E0ACD3EB3BC4F8C12A">
+        <File Id="F.runtimes.linux_musl_s390x.native.libe_sqlite3.so" KeyPath="yes" Source="$(var.BinDir)\runtimes/linux-musl-s390x/native/libe_sqlite3.so" />
+      </Component>
+      <Component Id="C.GA52B48B3E04B5ACFA7F6D8466935A32C" Directory="Dir.runtimes.linux_musl_x64.native" Guid="A52B48B3E04B5ACFA7F6D8466935A32C">
+        <File Id="F.runtimes.linux_musl_x64.native.libe_sqlite3.so" KeyPath="yes" Source="$(var.BinDir)\runtimes/linux-musl-x64/native/libe_sqlite3.so" />
+      </Component>
+      <Component Id="C.GF4C7A34739935061ADFFA07DD228D90A" Directory="Dir.runtimes.linux_ppc64le.native" Guid="F4C7A34739935061ADFFA07DD228D90A">
+        <File Id="F.runtimes.linux_ppc64le.native.libe_sqlite3.so" KeyPath="yes" Source="$(var.BinDir)\runtimes/linux-ppc64le/native/libe_sqlite3.so" />
+      </Component>
+      <Component Id="C.GE906C7C6F3CF5DCC9FFA73B6410B8721" Directory="Dir.runtimes.linux_riscv64.native" Guid="E906C7C6F3CF5DCC9FFA73B6410B8721">
+        <File Id="F.runtimes.linux_riscv64.native.libe_sqlite3.so" KeyPath="yes" Source="$(var.BinDir)\runtimes/linux-riscv64/native/libe_sqlite3.so" />
+      </Component>
+      <Component Id="C.G2F13229C3CE05C99A0EAD055881D3BA4" Directory="Dir.runtimes.linux_s390x.native" Guid="2F13229C3CE05C99A0EAD055881D3BA4">
+        <File Id="F.runtimes.linux_s390x.native.libe_sqlite3.so" KeyPath="yes" Source="$(var.BinDir)\runtimes/linux-s390x/native/libe_sqlite3.so" />
+      </Component>
+      <Component Id="C.G0395445B8DA3529E8BFAD5C8D3DEB0F1" Directory="Dir.runtimes.linux_x64.native" Guid="0395445B8DA3529E8BFAD5C8D3DEB0F1">
+        <File Id="F.runtimes.linux_x64.native.libe_sqlite3.so" KeyPath="yes" Source="$(var.BinDir)\runtimes/linux-x64/native/libe_sqlite3.so" />
+      </Component>
+      <Component Id="C.GF05C92C43FDA54C4AC4AB03AB75E4964" Directory="Dir.runtimes.linux_x86.native" Guid="F05C92C43FDA54C4AC4AB03AB75E4964">
+        <File Id="F.runtimes.linux_x86.native.libe_sqlite3.so" KeyPath="yes" Source="$(var.BinDir)\runtimes/linux-x86/native/libe_sqlite3.so" />
+      </Component>
+      <Component Id="C.G1C9CE3C38306577C92506EFF2F555FC1" Directory="Dir.runtimes.maccatalyst_arm64.native" Guid="1C9CE3C38306577C92506EFF2F555FC1">
+        <File Id="F.runtimes.maccatalyst_arm64.native.libe_sqlite3.dylib" KeyPath="yes" Source="$(var.BinDir)\runtimes/maccatalyst-arm64/native/libe_sqlite3.dylib" />
+      </Component>
+      <Component Id="C.G141EA24D02A35FEF944F3325540B54B0" Directory="Dir.runtimes.maccatalyst_x64.native" Guid="141EA24D02A35FEF944F3325540B54B0">
+        <File Id="F.runtimes.maccatalyst_x64.native.libe_sqlite3.dylib" KeyPath="yes" Source="$(var.BinDir)\runtimes/maccatalyst-x64/native/libe_sqlite3.dylib" />
+      </Component>
+      <Component Id="C.GE9A4ABE5A9225B9D8901977B714E0901" Directory="Dir.runtimes.osx_arm64.native" Guid="E9A4ABE5A9225B9D8901977B714E0901">
+        <File Id="F.runtimes.osx_arm64.native.libe_sqlite3.dylib" KeyPath="yes" Source="$(var.BinDir)\runtimes/osx-arm64/native/libe_sqlite3.dylib" />
+      </Component>
+      <Component Id="C.G4245A7A1B439522FAE4D484ED20BE5E1" Directory="Dir.runtimes.osx_x64.native" Guid="4245A7A1B439522FAE4D484ED20BE5E1">
+        <File Id="F.runtimes.osx_x64.native.libe_sqlite3.dylib" KeyPath="yes" Source="$(var.BinDir)\runtimes/osx-x64/native/libe_sqlite3.dylib" />
+      </Component>
+      <Component Id="C.GC99C3DAE6539590E9422253537AC13C6" Directory="Dir.runtimes.win_arm.native" Guid="C99C3DAE6539590E9422253537AC13C6">
+        <File Id="F.runtimes.win_arm.native.e_sqlite3.dll" KeyPath="yes" Source="$(var.BinDir)\runtimes/win-arm/native/e_sqlite3.dll" />
+      </Component>
+      <Component Id="C.G9FE36D61817B5C67A2BD7841BBFBE14A" Directory="Dir.runtimes.win_arm64.native" Guid="9FE36D61817B5C67A2BD7841BBFBE14A">
+        <File Id="F.runtimes.win_arm64.native.e_sqlite3.dll" KeyPath="yes" Source="$(var.BinDir)\runtimes/win-arm64/native/e_sqlite3.dll" />
+      </Component>
+      <Component Id="C.G41498E68A05B50CC97EF255C4141F9E7" Directory="Dir.runtimes.win_x64.native" Guid="41498E68A05B50CC97EF255C4141F9E7">
+        <File Id="F.runtimes.win_x64.native.WebView2Loader.dll" KeyPath="yes" Source="$(var.BinDir)\runtimes/win-x64/native/WebView2Loader.dll" />
+      </Component>
+      <Component Id="C.GB42AFCF14782592B86AB516E8E29611A" Directory="Dir.runtimes.win_x64.native" Guid="B42AFCF14782592B86AB516E8E29611A">
+        <File Id="F.runtimes.win_x64.native.e_sqlite3.dll" KeyPath="yes" Source="$(var.BinDir)\runtimes/win-x64/native/e_sqlite3.dll" />
+      </Component>
+      <Component Id="C.GFE0E9EBB8AA154CD937A9684FB3B0FBF" Directory="Dir.runtimes.win_x86.native" Guid="FE0E9EBB8AA154CD937A9684FB3B0FBF">
+        <File Id="F.runtimes.win_x86.native.e_sqlite3.dll" KeyPath="yes" Source="$(var.BinDir)\runtimes/win-x86/native/e_sqlite3.dll" />
+      </Component>
+      <Component Id="C.G1459F97C6EC25B46AB6D5D1CB0BDC480" Directory="Dir.sv_SE" Guid="1459F97C6EC25B46AB6D5D1CB0BDC480">
+        <File Id="F.sv_SE.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\sv-SE/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.G44FA834E22CA5310A6E9F068F8377941" Directory="Dir.ta" Guid="44FA834E22CA5310A6E9F068F8377941">
+        <File Id="F.ta.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\ta/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.GA71814B9250C5165983E6777276CE821" Directory="Dir.tr_TR" Guid="A71814B9250C5165983E6777276CE821">
+        <File Id="F.tr_TR.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\tr-TR/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.G92D08476C9A455808B62D1A187D91E1E" Directory="Dir.uk" Guid="92D08476C9A455808B62D1A187D91E1E">
+        <File Id="F.uk.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\uk/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.G5DB9A2FB5FAE5F1BA6A514510449C929" Directory="Dir.zh_CN" Guid="5DB9A2FB5FAE5F1BA6A514510449C929">
+        <File Id="F.zh_CN.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\zh-CN/mRemoteNG.resources.dll" />
+      </Component>
+      <Component Id="C.G0383DFA9F55A5E55AC1833B5AB6CE95B" Directory="Dir.zh_TW" Guid="0383DFA9F55A5E55AC1833B5AB6CE95B">
+        <File Id="F.zh_TW.mRemoteNG.resources.dll" KeyPath="yes" Source="$(var.BinDir)\zh-TW/mRemoteNG.resources.dll" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

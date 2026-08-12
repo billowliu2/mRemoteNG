@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
+  <Package Name="mRemoteNG (64 bit)" Manufacturer="Profi-Kom Ltd."
+           Version="$(var.ProductVersion)" UpgradeCode="dd678a54-ca75-4791-8dfe-d818095684f8"
+           Language="1033" Scope="perMachine" InstallerVersion="500" Compressed="yes">
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." Schedule="afterInstallInitialize" />
+    <MediaTemplate EmbedCab="yes" />
+
+    <!-- 安装目录：C:\Program Files\mRemoteNG -->
+    <StandardDirectory Id="ProgramFiles64Folder">
+      <Directory Id="INSTALLDIR" Name="mRemoteNG" />
+    </StandardDirectory>
+
+    <!-- 开始菜单 -->
+    <StandardDirectory Id="ProgramMenuFolder">
+      <Directory Id="ApplicationProgramsFolder" Name="mRemoteNG" />
+    </StandardDirectory>
+
+    <!-- 个人桌面：perMachine 安装默认会落到公共桌面，这里显式指向当前用户桌面 -->
+    <Directory Id="UserDesktopDir" Name="Desktop" />
+    <SetDirectory Id="UserDesktopDir" Value="[%USERPROFILE]\Desktop" />
+
+    <Property Id="ARPPRODUCTICON" Value="AppIcon.ico" />
+    <Icon Id="AppIcon.ico" SourceFile="Resources\AppIcon.ico" />
+
+    <Feature Id="F.MinimalFeature" Title="mRemoteNG" AllowAbsent="no" ConfigurableDirectory="INSTALLDIR" Display="expand" Level="1">
+      <ComponentGroupRef Id="CG.AppFiles" Primary="yes" />
+      <ComponentGroupRef Id="CG.ProjectInfoFiles" Primary="yes" />
+      <ComponentRef Id="C.MainExe" Primary="yes" />
+      <ComponentRef Id="C.RegistryEntries" Primary="yes" />
+    </Feature>
+
+    <Feature Id="F.DesktopShortcut" Title="Desktop shortcut" AllowAdvertise="no" Level="1">
+      <ComponentRef Id="C.DesktopShortcut" Primary="yes" />
+    </Feature>
+
+    <Feature Id="F.ApplicationStartMenuShortcut" Title="Start menu shortcut" AllowAdvertise="no" Level="1">
+      <ComponentRef Id="C.ApplicationStartMenuShortcut" Primary="yes" />
+    </Feature>
+
+    <WixVariable Id="WixUILicenseRtf" Value="Resources\License.rtf" />
+    <ui:WixUI Id="MyWixUI_FeatureTree" />
+  </Package>
+</Wix>

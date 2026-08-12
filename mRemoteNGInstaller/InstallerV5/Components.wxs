@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+
+  <!-- Main executable -->
+  <Fragment>
+    <Component Id="C.MainExe" Directory="INSTALLDIR" Guid="a028ee50-3135-46c7-83c0-1d14d36e146c">
+      <File Id="MainExeFile" KeyPath="yes" Source="$(var.SolutionDir)mRemoteNG\bin\x64\$(var.Configuration)\mRemoteNG.exe" />
+    </Component>
+  </Fragment>
+
+  <!-- Project info files -->
+  <Fragment>
+    <ComponentGroup Id="CG.ProjectInfoFiles" Directory="INSTALLDIR">
+      <Component Id="C.Changelog" Guid="762459f4-0460-4058-a448-d0f4e5cd4a65">
+        <File Id="ChangelogFile" Name="Changelog" KeyPath="yes" Source="$(var.SolutionDir)CHANGELOG.md" />
+      </Component>
+      <Component Id="C.License" Guid="89e79101-fcf9-4277-b948-1fd5f1fcae69">
+        <File Id="LicenseFile" Name="License" KeyPath="yes" Source="$(var.SolutionDir)COPYING.TXT" />
+      </Component>
+      <Component Id="C.Readme" Guid="1359cc74-fe51-4c6e-81f4-2bee7871c40f">
+        <File Id="ReadmeFile" Name="Readme" KeyPath="yes" Source="$(var.SolutionDir)README.md" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <!-- Install location registry key -->
+  <Fragment>
+    <Component Id="C.RegistryEntries" Directory="TARGETDIR" Guid="888643e4-4c52-45d3-801a-0d0d71c737fe">
+      <RegistryKey Root="HKLM" Key="Software\mRemoteNG">
+        <RegistryValue Type="string" Name="InstallDir" Value="[INSTALLDIR]" KeyPath="yes" />
+      </RegistryKey>
+    </Component>
+  </Fragment>
+
+  <!-- Desktop shortcut (current user's desktop) -->
+  <Fragment>
+    <Component Id="C.DesktopShortcut" Directory="UserDesktopDir" Guid="F78E5A16-A2F7-4BD9-9250-CBF3016CCCDA">
+      <Shortcut Id="DesktopShortcut" Name="mRemoteNG" Target="[INSTALLDIR]mRemoteNG.exe" WorkingDirectory="INSTALLDIR" Icon="AppIcon.ico" />
+      <RegistryValue Root="HKCU" Key="Software\mRemoteNG" Name="DesktopShortcut" Type="integer" Value="1" KeyPath="yes" />
+    </Component>
+  </Fragment>
+
+  <!-- Start menu shortcut -->
+  <Fragment>
+    <Component Id="C.ApplicationStartMenuShortcut" Directory="ApplicationProgramsFolder" Guid="193B9E14-F40E-44F1-8514-BED253BCBF75">
+      <Shortcut Id="ApplicationStartMenuShortcut" Name="mRemoteNG" Target="[INSTALLDIR]mRemoteNG.exe" WorkingDirectory="INSTALLDIR" Icon="AppIcon.ico" />
+      <RemoveFolder Id="RemoveApplicationProgramsFolder" Directory="ApplicationProgramsFolder" On="uninstall" />
+      <RegistryValue Root="HKCU" Key="Software\mRemoteNG" Name="ApplicationStartMenuShortcut" Type="integer" Value="1" KeyPath="yes" />
+    </Component>
+  </Fragment>
+</Wix>

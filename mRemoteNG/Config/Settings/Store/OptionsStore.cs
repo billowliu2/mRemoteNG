@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -11,7 +11,7 @@ namespace mRemoteNG.Config.Settings.Store
     /// SQLite-backed options store for development-only option management.
     /// Provides asynchronous CRUD operations for options that can be added/edited/deleted at runtime.
     /// </summary>
-    public class OptionsStore : IDisposable
+    public class OptionsStore : ISettingsStore
     {
         private readonly string _dbPath;
         private readonly string _connectionString;
@@ -19,6 +19,11 @@ namespace mRemoteNG.Config.Settings.Store
         private bool _disposed;
 
         public bool IsInitialized { get; private set; }
+
+        /// <summary>
+        /// The schema version of the store. The options schema is fixed at version 1.
+        /// </summary>
+        public int SchemaVersion => 1;
 
         /// <summary>
         /// Creates a new OptionsStore instance.
@@ -527,6 +532,128 @@ namespace mRemoteNG.Config.Settings.Store
             Execute("PRAGMA wal_checkpoint(TRUNCATE);");
         }
 
+        /// <summary>
+        /// Gets a setting value, returning the default if not found.
+        /// </summary>
+        public T Get<T>(string category, string key, T defaultValue = default)
+        {
+            EnsureReady();
+
+            const string sql = "SELECT value FROM options WHERE category = @category AND key = @key;";
+            using SqliteCommand cmd = _connection.CreateCommand();
+            cmd.CommandText = sql;
+            cmd.Parameters.AddWithValue("@category", category);
+            cmd.Parameters.AddWithValue("@key", key);
+
+            object result = cmd.ExecuteScalar();
+            if (result is null or DBNull)
+                return defaultValue;
+
+            return ConvertValue<T>((string)result);
+        }
+
+        /// <summary>
+        /// Sets a setting value.
+        /// </summary>
+        public void Set<T>(string category, string key, T value)
+        {
+            EnsureReady();
+
+            string serialized = SerializeValue(value);
+
+            const string sql = """
+                INSERT INTO options (key, value, category, option_type, modified_at)
+                VALUES (@key, @value, @category, @type, @now)
+                ON CONFLICT(key) DO UPDATE SET
+                    value = excluded.value,
+                    category = excluded.category,
+                    option_type = excluded.option_type,
+                    modified_at = excluded.modified_at;
+                """;
+
+            using SqliteCommand cmd = _connection.CreateCommand();
+            cmd.CommandText = sql;
+            cmd.Parameters.AddWithValue("@key", key);
+            cmd.Parameters.AddWithValue("@value", serialized ?? (object)DBNull.Value);
+            cmd.Parameters.AddWithValue("@category", category);
+            cmd.Parameters.AddWithValue("@type", GetValueTypeName(typeof(T)));
+            cmd.Parameters.AddWithValue("@now", DateTime.UtcNow.ToString("o", CultureInfo.InvariantCulture));
+            cmd.ExecuteNonQuery();
+        }
+
+        /// <summary>
+        /// Removes a single setting.
+        /// </summary>
+        public bool Remove(string category, string key)
+        {
+            EnsureReady();
+
+            const string sql = "DELETE FROM options WHERE category = @category AND key = @key;";
+            using SqliteCommand cmd = _connection.CreateCommand();
+            cmd.CommandText = sql;
+            cmd.Parameters.AddWithValue("@category", category);
+            cmd.Parameters.AddWithValue("@key", key);
+            return cmd.ExecuteNonQuery() > 0;
+        }
+
+        /// <summary>
+        /// Returns all key-value pairs in a category.
+        /// </summary>
+        public IReadOnlyDictionary<string, string> GetAll(string category)
+        {
+            EnsureReady();
+
+            Dictionary<string, string> results = new(StringComparer.OrdinalIgnoreCase);
+            const string sql = "SELECT key, value FROM options WHERE category = @category;";
+            using SqliteCommand cmd = _connection.CreateCommand();
+            cmd.CommandText = sql;
+            cmd.Parameters.AddWithValue("@category", category);
+
+            using SqliteDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                results[reader.GetString(0)] = reader.IsDBNull(1) ? null : reader.GetString(1);
+            }
+
+            return results;
+        }
+
+        /// <summary>
+        /// Returns all categories present in the store.
+        /// </summary>
+        public IReadOnlyList<string> GetCategories()
+        {
+            EnsureReady();
+
+            List<string> categories = [];
+            const string sql = "SELECT DISTINCT category FROM options ORDER BY category;";
+            using SqliteCommand cmd = _connection.CreateCommand();
+            cmd.CommandText = sql;
+
+            using SqliteDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                categories.Add(reader.GetString(0));
+            }
+
+            return categories;
+        }
+
+        /// <summary>
+        /// Returns true if the setting exists.
+        /// </summary>
+        public bool Exists(string category, string key)
+        {
+            EnsureReady();
+
+            const string sql = "SELECT COUNT(1) FROM options WHERE category = @category AND key = @key;";
+            using SqliteCommand cmd = _connection.CreateCommand();
+            cmd.CommandText = sql;
+            cmd.Parameters.AddWithValue("@category", category);
+            cmd.Parameters.AddWithValue("@key", key);
+            return Convert.ToInt64(cmd.ExecuteScalar()) > 0;
+        }
+
         public void Dispose()
         {
             if (_disposed) return;
@@ -542,6 +669,85 @@ namespace mRemoteNG.Config.Settings.Store
         }
 
         #region Private Helpers
+
+        private static string SerializeValue<T>(T value)
+        {
+            if (value is null) return null;
+
+            return value switch
+            {
+                string s => s,
+                bool b => b ? "true" : "false",
+                int or long or double or float or decimal => Convert.ToString(value, CultureInfo.InvariantCulture),
+                DateTime dt => dt.ToString("o", CultureInfo.InvariantCulture),
+                System.Drawing.Point p => $"{p.X},{p.Y}",
+                System.Drawing.Size s => $"{s.Width},{s.Height}",
+                Enum e => e.ToString(),
+                _ => System.Text.Json.JsonSerializer.Serialize(value)
+            };
+        }
+
+        private static T ConvertValue<T>(string raw)
+        {
+            if (raw is null) return default;
+
+            Type targetType = typeof(T);
+
+            if (targetType == typeof(string))
+                return (T)(object)raw;
+
+            if (targetType == typeof(bool))
+                return (T)(object)(raw.Equals("true", StringComparison.OrdinalIgnoreCase) || raw == "1");
+
+            if (targetType == typeof(int))
+                return (T)(object)int.Parse(raw, CultureInfo.InvariantCulture);
+
+            if (targetType == typeof(long))
+                return (T)(object)long.Parse(raw, CultureInfo.InvariantCulture);
+
+            if (targetType == typeof(double))
+                return (T)(object)double.Parse(raw, CultureInfo.InvariantCulture);
+
+            if (targetType == typeof(float))
+                return (T)(object)float.Parse(raw, CultureInfo.InvariantCulture);
+
+            if (targetType == typeof(decimal))
+                return (T)(object)decimal.Parse(raw, CultureInfo.InvariantCulture);
+
+            if (targetType == typeof(DateTime))
+                return (T)(object)DateTime.Parse(raw, CultureInfo.InvariantCulture, DateTimeStyles.RoundtripKind);
+
+            if (targetType == typeof(System.Drawing.Point))
+            {
+                string[] parts = raw.Split(',');
+                return (T)(object)new System.Drawing.Point(int.Parse(parts[0].Trim()), int.Parse(parts[1].Trim()));
+            }
+
+            if (targetType == typeof(System.Drawing.Size))
+            {
+                string[] parts = raw.Split(',');
+                return (T)(object)new System.Drawing.Size(int.Parse(parts[0].Trim()), int.Parse(parts[1].Trim()));
+            }
+
+            if (targetType.IsEnum)
+                return (T)Enum.Parse(targetType, raw, ignoreCase: true);
+
+            // Fallback: JSON deserialization
+            return System.Text.Json.JsonSerializer.Deserialize<T>(raw);
+        }
+
+        private static string GetValueTypeName(Type type)
+        {
+            if (type == typeof(string)) return "string";
+            if (type == typeof(bool)) return "bool";
+            if (type == typeof(int) || type == typeof(long)) return "int";
+            if (type == typeof(double) || type == typeof(float) || type == typeof(decimal)) return "float";
+            if (type == typeof(DateTime)) return "datetime";
+            if (type == typeof(System.Drawing.Point)) return "point";
+            if (type == typeof(System.Drawing.Size)) return "size";
+            if (type.IsEnum) return "enum";
+            return "json";
+        }
 
         private OptionInfo ReadOptionFromReader(SqliteDataReader reader)
         {
