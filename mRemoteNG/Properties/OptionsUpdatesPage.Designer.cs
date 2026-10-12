@@ -49,7 +49,7 @@ namespace mRemoteNG.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://mremoteng.org/")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://raw.githubusercontent.com/billowliu2/mRemoteNG/v1.78.2-dev/")]
         public string UpdateAddress {
             get {
                 return ((string)(this["UpdateAddress"]));

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 // ReSharper disable UnusedAutoPropertyAccessor.Local
 
@@ -62,10 +62,9 @@ namespace mRemoteNG.App.Update
             if (string.IsNullOrEmpty(ImageLinkAddress.AbsoluteUri))
                 return false;
 #endif
-#if !PORTABLE
-            if (string.IsNullOrEmpty(CertificateThumbprint))
-                return false;
-#endif
+            // CertificateThumbprint is optional: an empty thumbprint means the
+            // update package is unsigned and signature verification is skipped
+            // (the SHA512 checksum still guarantees integrity).
             if (string.IsNullOrEmpty(FileName))
                 return false;
             // ReSharper disable once ConvertIfStatementToReturnStatement

@@ -1,0 +1,7 @@
+# mRemoteNG fork update feed (maintained by billowliu2)
+# Package is unsigned: CertificateThumbprint intentionally omitted,
+# integrity is guaranteed by the SHA512 checksum below.
+Version: 1.78.2.3740
+dURL: https://github.com/billowliu2/mRemoteNG/releases/download/v1.78.3/mRemoteNG-Installer.msi
+clURL: https://github.com/billowliu2/mRemoteNG/releases/tag/v1.78.3
+Checksum: 22E263FC34FE389EFA162BB0ADB6B2E59146D1827BAFAA0C8DE52DCE36961DE03F5D81D9A1B12DDDE9393F0D7966B874678F7E03D55E93924C0DB1BCB642FA43

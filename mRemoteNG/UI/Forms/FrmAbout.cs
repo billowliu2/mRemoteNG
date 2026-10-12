@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Windows.Forms;
 using mRemoteNG.App.Info;
@@ -66,6 +66,11 @@ namespace mRemoteNG.UI.Forms
             
             // Don't cancel close when shown in DockPanel
             // This allows the tab to close properly without showing connection close dialog
+        }
+
+        private void llForkRepo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            OpenUrl("https://github.com/billowliu2/mRemoteNG");
         }
 
         private void llLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -1,4 +1,4 @@
-﻿namespace mRemoteNG.UI.Forms
+namespace mRemoteNG.UI.Forms
 {
     public partial class frmAbout
     {
@@ -10,6 +10,7 @@
             llCredits = new System.Windows.Forms.LinkLabel();
             llChangelog = new System.Windows.Forms.LinkLabel();
             llLicense = new System.Windows.Forms.LinkLabel();
+            llForkRepo = new System.Windows.Forms.LinkLabel();
             lblTitle = new Controls.MrngLabel();
             lblVersion = new Controls.MrngLabel();
             lblLicense = new Controls.MrngLabel();
@@ -37,6 +38,7 @@
             pnlBottom.Controls.Add(llCredits);
             pnlBottom.Controls.Add(llChangelog);
             pnlBottom.Controls.Add(llLicense);
+            pnlBottom.Controls.Add(llForkRepo);
             pnlBottom.Controls.Add(lblTitle);
             pnlBottom.Controls.Add(lblVersion);
             pnlBottom.Controls.Add(lblLicense);
@@ -84,6 +86,19 @@
             llLicense.Text = "License";
             llLicense.LinkClicked += llLicense_LinkClicked;
             // 
+            // llForkRepo
+            // 
+            llForkRepo.AutoSize = true;
+            llForkRepo.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            llForkRepo.Location = new System.Drawing.Point(290, 52);
+            llForkRepo.MaximumSize = new System.Drawing.Size(280, 0);
+            llForkRepo.Name = "llForkRepo";
+            llForkRepo.Size = new System.Drawing.Size(280, 34);
+            llForkRepo.TabIndex = 11;
+            llForkRepo.TabStop = true;
+            llForkRepo.Text = "This fork is maintained by billowliu2\r\ngithub.com/billowliu2/mRemoteNG";
+            llForkRepo.LinkClicked += llForkRepo_LinkClicked;
+            //
             // lblTitle
             // 
             lblTitle.AutoSize = true;
@@ -162,5 +177,6 @@
         private System.Windows.Forms.LinkLabel llCredits;
         private System.Windows.Forms.LinkLabel llChangelog;
         private System.Windows.Forms.LinkLabel llLicense;
+        private System.Windows.Forms.LinkLabel llForkRepo;
     }
 }

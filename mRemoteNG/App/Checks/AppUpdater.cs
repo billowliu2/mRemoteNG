@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Net;
 using System.Net.Http;
@@ -164,7 +164,12 @@ namespace mRemoteNG.App.Update
                 }
 
 #if !PORTABLE
-                Authenticode updateAuthenticode = new(CurrentUpdateInfo.UpdateFilePath)
+                // Only verify the Authenticode signature when the update feed
+                // specifies a certificate thumbprint. Unsigned packages rely on
+                // the SHA512 checksum below for integrity.
+                if (!string.IsNullOrEmpty(CurrentUpdateInfo.CertificateThumbprint))
+                {
+                    Authenticode updateAuthenticode = new(CurrentUpdateInfo.UpdateFilePath)
                     {
                         RequireThumbprintMatch = true,
                         ThumbprintToMatch = CurrentUpdateInfo.CertificateThumbprint
@@ -179,6 +184,7 @@ namespace mRemoteNG.App.Update
 
                         throw new Exception(updateAuthenticode.GetStatusMessage());
                     }
+                }
 #endif
 
                 using SHA512 checksum = SHA512.Create();
