@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="SingleClickOnConnectionOpensIt" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="ConDefaultDescription" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -27,7 +27,7 @@
       <Value Profile="(Default)">Colors16Bit</Value>
     </Setting>
     <Setting Name="ConDefaultCacheBitmaps" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="ConDefaultDisplayWallpaper" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -39,13 +39,13 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="ConDefaultRedirectDiskDrives" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="ConDefaultRedirectPrinters" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="ConDefaultRedirectClipboard" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="ConDefaultRedirectPorts" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -162,7 +162,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="SetHostnameLikeDisplayName" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="ConDefaultVNCAuthMode" Type="System.String" Scope="User">
       <Value Profile="(Default)">AuthVNC</Value>
@@ -231,7 +231,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="SingleClickSwitchesToOpenConnection" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="ConDefaultRDPAuthenticationLevel" Type="System.String" Scope="User">
       <Value Profile="(Default)">NoAuth</Value>
@@ -315,7 +315,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="ConDefaultEnableFontSmoothing" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="InhDefaultEnableFontSmoothing" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -444,7 +444,7 @@
       <Value Profile="(Default)">General</Value>
     </Setting>
     <Setting Name="UseFilterSearch" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="LockToolbars" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -456,10 +456,10 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="MultiSshToolbarVisible" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TrackActiveConnectionInConnectionTree" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="PlaceSearchBarAboveConnectionTree" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
