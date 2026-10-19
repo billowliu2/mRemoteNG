@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Runtime.Versioning;
 using mRemoteNG.Connection;
 using mRemoteNG.Container;
-using mRemoteNG.Properties;
 using mRemoteNG.Tree.Root;
 
 
@@ -60,8 +59,6 @@ namespace mRemoteNG.Tree
                 return;
 
             connectionInfo.Name = newName;
-            if (Settings.Default.SetHostnameLikeDisplayName)
-                connectionInfo.Hostname = newName;
         }
 
         public void DeleteNode(ConnectionInfo connectionInfo)

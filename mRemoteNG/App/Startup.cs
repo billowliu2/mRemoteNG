@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.Runtime.Versioning;
@@ -45,6 +45,18 @@ namespace mRemoteNG.App
             ParseCommandLineArgs(messageCollector);
             IeBrowserEmulation.Register();
             _connectionIconLoader.GetConnectionIcons();
+            // one-time migration of legacy shipped defaults: single click must only select
+            // (connections open on double click), and the RDP default must not be "Highest",
+            // whose newest AX control is unavailable on some machines
+            if (!Settings.Default.LegacyDefaultsMigrated)
+            {
+                Settings.Default.SingleClickOnConnectionOpensIt = false;
+                Settings.Default.SingleClickSwitchesToOpenConnection = false;
+                if (Settings.Default.ConDefaultRdpVersion == "Highest")
+                    Settings.Default.ConDefaultRdpVersion = "Rdc8";
+                Settings.Default.LegacyDefaultsMigrated = true;
+                Settings.Default.Save();
+            }
             DefaultConnectionInfo.Instance.LoadFrom(Settings.Default, a => "ConDefault" + a);
             DefaultConnectionInheritance.Instance.LoadFrom(Settings.Default, a => "InhDefault" + a);
 

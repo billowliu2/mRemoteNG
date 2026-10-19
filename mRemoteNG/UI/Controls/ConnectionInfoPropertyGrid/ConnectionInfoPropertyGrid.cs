@@ -317,10 +317,10 @@ namespace mRemoteNG.UI.Controls.ConnectionInfoPropertyGrid {
 
             if (e.ChangedItem.Label == Language.Protocol) {
                 SelectedConnectionInfo.SetDefaultPort();
-            } else if (e.ChangedItem.Label == Language.Name) {
+            } else if (e.ChangedItem.Label == Language.HostnameIp) {
                 if (Settings.Default.SetHostnameLikeDisplayName) {
-                    if (!string.IsNullOrEmpty(SelectedConnectionInfo.Name))
-                        SelectedConnectionInfo.Hostname = SelectedConnectionInfo.Name;
+                    if (string.IsNullOrEmpty(SelectedConnectionInfo.Name))
+                        SelectedConnectionInfo.Name = SelectedConnectionInfo.Hostname;
                 }
             }
 

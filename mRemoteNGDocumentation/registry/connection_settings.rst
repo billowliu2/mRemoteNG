@@ -55,7 +55,7 @@ When switching to an active connection, the focus in the tree view will also swi
 
 Set Hostname Like Display Name
 ------------------------------
-Specifies whether to set the hostname like the display name when creating or renaming a connection.
+Specifies whether to use the hostname as the connection name when the name is empty.
 
 - **Value Name:** ``SetHostnameLikeDisplayName``
 - **Value Type:** ``REG_SZ``

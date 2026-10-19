@@ -127,7 +127,7 @@ namespace mRemoteNG.UI.Forms.OptionsPages
             chkHostnameLikeDisplayName.Name = "chkHostnameLikeDisplayName";
             chkHostnameLikeDisplayName.Size = new System.Drawing.Size(355, 17);
             chkHostnameLikeDisplayName.TabIndex = 2;
-            chkHostnameLikeDisplayName.Text = "Set hostname like display name when creating new connections";
+            chkHostnameLikeDisplayName.Text = "Use hostname/IP as the name when the name is empty";
             chkHostnameLikeDisplayName.UseVisualStyleBackColor = true;
             // 
             // chkSingleClickOnOpenedConnectionSwitchesToIt

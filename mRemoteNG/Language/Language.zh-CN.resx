@@ -1499,7 +1499,7 @@
     <value>发送到…</value>
   </data>
   <data name="SetHostnameLikeDisplayName" xml:space="preserve">
-    <value>新建或重命名连接时，主机名自动设置为显示名称</value>
+    <value>名称为空时，自动使用主机名/IP作为名称</value>
   </data>
   <data name="SettingsCouldNotBeSavedOrTrayDispose" xml:space="preserve">
     <value>无法保存配置或设置系统托盘图标！</value>
@@ -2049,6 +2049,9 @@ mRemoteNG 将退出并安装更新。</value>
   </data>
   <data name="RdpProtocolVersionNotSupported" xml:space="preserve">
     <value>无法创建 RDP 客户端。此计算机上不支持 RDP 协议版本 {0}。请选择较旧的协议版本。</value>
+  </data>
+  <data name="RdpVersionFallback" xml:space="preserve">
+    <value>此计算机不支持 RDP 协议版本 {0}，已自动改用 {1}</value>
   </data>
   <data name="StartMinimized" xml:space="preserve">
     <value>启动时最小化</value>

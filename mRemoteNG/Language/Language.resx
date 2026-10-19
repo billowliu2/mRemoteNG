@@ -1621,7 +1621,7 @@ If you run into such an error, please create a new connection file!</value>
     <value>Send To...</value>
   </data>
   <data name="SetHostnameLikeDisplayName" xml:space="preserve">
-    <value>Set hostname like display name when creating or renaming connections</value>
+    <value>Use hostname/IP as the name when the name is empty</value>
   </data>
   <data name="SettingsCouldNotBeSavedOrTrayDispose" xml:space="preserve">
     <value>Couldn't save settings or dispose SysTray Icon!</value>
@@ -2180,6 +2180,9 @@ Nightly Channel includes Alphas, Betas &amp; Release Candidates.</value>
   </data>
   <data name="RdpProtocolVersionNotSupported" xml:space="preserve">
     <value>Could not create RDP client. RDP protocol version {0} is not supported on this machine. Please choose an older protocol version.</value>
+  </data>
+  <data name="RdpVersionFallback" xml:space="preserve">
+    <value>RDP protocol version {0} is not available on this machine; using {1} instead</value>
   </data>
   <data name="PropertyDescriptionSshTunnel" xml:space="preserve">
     <value>For connection through a SSH tunnel (jump host) specify SSH connection to be used to establish SSH tunnel.</value>

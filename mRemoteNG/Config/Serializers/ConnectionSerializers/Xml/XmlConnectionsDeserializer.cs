@@ -491,7 +491,7 @@ namespace mRemoteNG.Config.Serializers.ConnectionSerializers.Xml
                     connectionInfo.UseVmId = xmlnode.GetAttributeAsBool("UseVmId");
                     connectionInfo.VmId = xmlnode.GetAttributeAsString("VmId");
                     connectionInfo.UseEnhancedMode = xmlnode.GetAttributeAsBool("UseEnhancedMode");
-                    connectionInfo.RdpVersion = xmlnode.GetAttributeAsEnum("RdpVersion", RdpVersion.Highest);
+                    connectionInfo.RdpVersion = xmlnode.GetAttributeAsEnum("RdpVersion", RdpVersion.Rdc8);
                     connectionInfo.SSHTunnelConnectionName = xmlnode.GetAttributeAsString("SSHTunnelConnectionName");
                     connectionInfo.OpeningCommand = xmlnode.GetAttributeAsString("OpeningCommand");
                     connectionInfo.SSHOptions = xmlnode.GetAttributeAsString("SSHOptions");

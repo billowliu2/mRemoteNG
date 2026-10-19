@@ -5899,6 +5899,15 @@ namespace mRemoteNG.Resources.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to RDP protocol version {0} is not available on this machine; using {1} instead.
+        /// </summary>
+        internal static string RdpVersionFallback {
+            get {
+                return ResourceManager.GetString("RdpVersionFallback", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to RDP reconnect count:.
         /// </summary>
         internal static string RdpReconnectCount {

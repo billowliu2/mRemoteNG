@@ -1,9 +1,9 @@
-﻿<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='utf-8'?>
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="mRemoteNG.Properties" GeneratedClassName="Settings" UseMySettingsClassName="true">
   <Profiles />
   <Settings>
     <Setting Name="SingleClickOnConnectionOpensIt" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="ConDefaultDescription" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -231,7 +231,10 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="SingleClickSwitchesToOpenConnection" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="LegacyDefaultsMigrated" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="ConDefaultRDPAuthenticationLevel" Type="System.String" Scope="User">
       <Value Profile="(Default)">NoAuth</Value>
@@ -486,7 +489,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="ConDefaultRdpVersion" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Highest</Value>
+      <Value Profile="(Default)">Rdc8</Value>
     </Setting>
     <Setting Name="InhDefaultRdpVersion" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

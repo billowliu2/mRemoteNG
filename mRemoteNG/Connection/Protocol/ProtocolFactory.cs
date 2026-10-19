@@ -27,7 +27,7 @@ namespace mRemoteNG.Connection.Protocol
             switch (connectionInfo.Protocol)
             {
                 case ProtocolType.RDP:
-                    RdpProtocol rdp = _rdpProtocolFactory.Build(connectionInfo.RdpVersion);
+                    RdpProtocol rdp = _rdpProtocolFactory.BuildWithFallback(connectionInfo.RdpVersion);
                     rdp.LoadBalanceInfoUseUtf8 = Properties.OptionsAdvancedPage.Default.RdpLoadBalanceInfoUseUtf8;
                     return rdp;
                 case ProtocolType.VNC:

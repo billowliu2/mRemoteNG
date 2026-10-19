@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Versioning;
+using mRemoteNG.App;
+using mRemoteNG.Messages;
+using mRemoteNG.Resources.Language;
 
 namespace mRemoteNG.Connection.Protocol.RDP
 {
@@ -29,6 +32,32 @@ namespace mRemoteNG.Connection.Protocol.RDP
                 default:
                     throw new ArgumentOutOfRangeException(nameof(rdpVersion), rdpVersion, null);
             }
+        }
+
+        public RdpProtocol BuildWithFallback(RdpVersion requested)
+        {
+            IEnumerable<RdpVersion> versions = Enum.GetValues(typeof(RdpVersion))
+                .OfType<RdpVersion>()
+                .Except(new[] { RdpVersion.Highest })
+                .Where(version => version <= requested)
+                .OrderByDescending(version => version);
+
+            foreach (RdpVersion version in versions)
+            {
+                RdpProtocol rdp = Build(version);
+                if (!rdp.RdpVersionSupported())
+                    continue;
+
+                if (version != requested && requested != RdpVersion.Highest)
+                {
+                    Runtime.MessageCollector.AddMessage(MessageClass.InformationMsg,
+                        string.Format(Language.RdpVersionFallback, requested, version));
+                }
+
+                return rdp;
+            }
+
+            return Build(requested);
         }
 
         private RdpProtocol BuildHighestSupportedVersion()
